@@ -11,63 +11,68 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class NewDetail extends AppCompatActivity implements View.OnClickListener {
-    //Explicit
-    private TextView titlTextView, dateTextView, detaTextView;
-        private ImageView newsImageView;
-    private  String titleString, dateString, detailString, urlNewsImageString, videoString;
-    private Button backButton, videoButton;
-    
+import org.w3c.dom.Text;
 
+public class NewDetail extends AppCompatActivity implements View.OnClickListener {
+
+    //Explicit
+    private TextView titleTextView, dateTextView, detailTextView;
+    private ImageView newsImageView;
+    private String titleString, dateString, detailString, urlNewsImageString, videoString;
+    private Button backButton, videoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_detail);
 
-        //Bind Widget
-        bindWidget();
+        //bindwidget
+        bindwidget();
 
+        //Show view
         showView();
-        
-        //Button
+
+        //button controller
         buttonController();
 
 
 
-
-
-}//Main Method
+    } // mian method
 
     private void buttonController() {
         backButton.setOnClickListener(this);
         videoButton.setOnClickListener(this);
+
+
+
+
     }
 
-    private  void showView(){
-        //Receive Value From Intent
+    private void showView() {
+
+        //Receive value From Intent
         titleString = getIntent().getStringExtra("Title");
         urlNewsImageString = getIntent().getStringExtra("Image");
-        dateString   =getIntent().getStringExtra("Date");
+        dateString = getIntent().getStringExtra("Date");
         detailString = getIntent().getStringExtra("Detail");
 
-
-        titlTextView.setText(titleString);
+        titleTextView.setText(titleString);
         dateTextView.setText(dateString);
-        detaTextView.setText(detailString);
+        detailTextView.setText(detailString);
 
         Picasso.with(NewDetail.this)
                 .load(urlNewsImageString)
                 .resize(250, 125)
                 .into(newsImageView);
 
-    }//showView
 
-    private void bindWidget() {
+    }//show view
 
-        titlTextView = (TextView) findViewById(R.id.txtTitleNewsDetail);
-        dateTextView =(TextView)findViewById(R.id.txtDay);
-        detaTextView = (TextView)findViewById(R.id.txtDetail);
+    private void bindwidget() {
+
+        titleTextView = (TextView) findViewById(R.id.txtTitleNewsDetail);
+        dateTextView = (TextView) findViewById(R.id.txtDay);
+        detailTextView = (TextView) findViewById(R.id.txtDetail);
         newsImageView = (ImageView) findViewById(R.id.imvDetail);
         backButton = (Button) findViewById(R.id.bttDetailBack);
         videoButton = (Button) findViewById(R.id.bttDetailVideo);
@@ -79,34 +84,36 @@ public class NewDetail extends AppCompatActivity implements View.OnClickListener
     public void onClick(View view) {
 
         switch (view.getId()) {
-
             case R.id.bttDetailBack:
                 finish();
                 break;
-            case  R.id.bttDetailVideo:
-        showVideoView();
+            case R.id.bttDetailVideo:
 
+                showVideoView();
 
                 break;
-        }//swith
-    }//onClick
+        } //switch
+    } //onclick
 
     private void showVideoView() {
+
         videoString = getIntent().getStringExtra("Video");
-        if (videoString.length() !=0) {
-            //Have Value
+        if (videoString.length() != 0) {
+            //Have
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(videoString));
             startActivity(intent);
-        }else{
-            //Null
+
+
+        } else {
+            //null
+
             MyAlertDialog myAlertDialog = new MyAlertDialog();
             myAlertDialog.MyDialog(NewDetail.this, R.drawable.icon_question,
-                    "ไม่สามารถแสดง วีดิโอได้", "ไม่สามารถแสดง วีดีโอได้ เนื่องด้วยข่าวนี้ไม่มีวีดีโอค่ะ" );
+                    "ไม่สามรถแสดง วีดีโอ ได้", "ไม่สามรถแสดง เนื่องด้วยข่าวนี้ไม่มี วีดีโอ");
         }
 
 
-    }//showVideo
 
-
-} //Main Class
+    }//show video view
+} //main class

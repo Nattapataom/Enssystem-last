@@ -23,8 +23,12 @@ public class NewListView extends AppCompatActivity {
 
         //Bind Widdget
         newListView = (ListView) findViewById(R.id.listView);
-        //Create ListView
+
+        //create ListView
         createListView();
+
+
+
 
 
 
@@ -32,8 +36,8 @@ public class NewListView extends AppCompatActivity {
     }//Main Method
 
     private void createListView() {
-        //Read All Data from SQLite
-        int intDigit = 30; //จำนวนตัวอักษรที่จะอ่านมาแสดงที่ Title
+        //Read All Data From SQLite
+        int intDigit = 30; // จำนวนตัวอักษรที่แสดงที่ Title
 
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,
                 MODE_PRIVATE, null);
@@ -41,33 +45,36 @@ public class NewListView extends AppCompatActivity {
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + ManageTABLE.TABLE_newsTABLE, null);
         cursor.moveToFirst();
 
-        int intCount =  cursor  .getCount();
-        final String[] titleFullStrings = new  String[intCount];
+        final int intCount = cursor.getCount();
+        final String[] titleFullStrings = new String[intCount];
         String[] titleShortStrings = new String[intCount];
         final String[] dateStrings = new String[intCount];
-        final String[] photoNewStrings = new  String[intCount];
+        final String[] photoNewsStrings = new String[intCount];
         final String[] detailStrings = new String[intCount];
         final String[] videoStrings = new String[intCount];
 
 
-
-
-
         for (int i = 0; i < intCount; i++) {
+
             titleFullStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Title_News));
             dateStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Day_News));
-            photoNewStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Photo_News));
+            photoNewsStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Photo_News));
             detailStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Detail_News));
             videoStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Video_News));
 
-            titleShortStrings[i] = titleFullStrings[i].substring(0, intDigit)+"...";
-            cursor.moveToNext();
-        }//for
-        cursor.close();
-         NewsAdapter newsAdapter = new NewsAdapter(NewListView.this,
-                 titleShortStrings, dateStrings, photoNewStrings);
-        newListView.setAdapter(newsAdapter);
 
+            titleShortStrings[i] = titleFullStrings[i].substring(0, intDigit) + "...";
+
+
+            cursor.moveToNext();
+
+        } //for
+
+        cursor.close();
+
+        NewsAdapter newsAdapter = new NewsAdapter(NewListView.this,
+                titleShortStrings, dateStrings, photoNewsStrings);
+        newListView.setAdapter(newsAdapter);
 
         newListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -75,25 +82,20 @@ public class NewListView extends AppCompatActivity {
 
                 Intent intent = new Intent(NewListView.this, NewDetail.class);
                 intent.putExtra("Title", titleFullStrings[i]);
-                intent.putExtra("image", photoNewStrings[i]);
-                intent.putExtra("date", dateStrings[i]);
-                intent.putExtra("detail", detailStrings[i]);
-                intent.putExtra("video", videoStrings[i]);
-
-
+                intent.putExtra("Image", photoNewsStrings[i]);
+                intent.putExtra("Date", dateStrings[i]);
+                intent.putExtra("Detail", detailStrings[i]);
+                intent.putExtra("Video", videoStrings[i]);
                 startActivity(intent);
 
-
-            }   //onItemClick
+            } // on item click
         });
 
 
-
-        }//createListView
-
+    }//create ListView
 
     public void clickBackNewsList(View view) {
-         finish();
+        finish();
     }
 
 

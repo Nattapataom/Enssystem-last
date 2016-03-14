@@ -9,6 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * Created by User on 14/3/2559.
  */
@@ -56,8 +58,8 @@ import android.widget.TextView;
 
         //Icon
         ImageView iconImageView = (ImageView) view1.findViewById(R.id.imageView9);
+        Picasso.with(context).load(iconStrings[i]).resize(200, 100).into(iconImageView);
 
-
-        return null;
+        return view1;
     }
 }// Main Class

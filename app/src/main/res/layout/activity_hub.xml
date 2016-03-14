@@ -147,16 +147,16 @@
         android:gravity="right">
 
         <ImageView
-            android:layout_width="@dimen/flat"
-            android:layout_height="@dimen/flat"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:onClick="clickTHAI"
             android:id="@+id/imageView5"
             android:src="@drawable/thai"
             android:layout_marginRight="10dp" />
 
         <ImageView
-            android:layout_width="@dimen/flat"
-            android:layout_height="@dimen/flat"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:onClick="clickENG"
             android:id="@+id/imageView8"
             android:src="@drawable/eng"

@@ -61,33 +61,8 @@
     </string-array>
 
 
+
     <string-array name="cat3_name">
-
-        <item>โรงพยาบาลเมืองฉะเชิงเทรา</item>
-        <item>โรงพยาบาลบ้านโพธิ์</item>
-        <item>โรงพยาบาลบางคล้า</item>
-        <item>โรงพยาบาลบางน้ำเปรี้ยว</item>
-
-
-    </string-array>
-
-
-
-    <string-array name="cat3_phone">
-
-        <item>038814757</item>
-        <item>038587344</item>
-        <item>038541009</item>
-        <item>038581103</item>
-
-
-    </string-array>
-
-
-
-
-
-    <string-array name="cat4_name">
 
         <item>สภ.เมืองฉะเชิงเทรา</item>
         <item>สภ.พนมสารคาม</item>
@@ -105,7 +80,7 @@
 
 
 
-    <string-array name="cat4_phone">
+    <string-array name="cat3_phone">
 
         <item>038511111</item>
         <item>038551666</item>
@@ -122,13 +97,13 @@
     </string-array>
 
 
-    <string-array name="cat5_name">
+    <string-array name="cat4_name">
 
         <item>สำนักงานประปาฉะเชิงเทรา</item>
 
     </string-array>
 
-    <string-array name="cat5_phone">
+    <string-array name="cat4_phone">
 
         <item>038511133</item>
 

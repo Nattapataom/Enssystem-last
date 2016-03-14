@@ -43,7 +43,8 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".NewListView" />
-        <activity android:name=".NewDetail"></activity>
+        <activity android:name=".NewDetail" />
+        <activity android:name=".CallListView"></activity>
     </application>
 
 </manifest>

@@ -47,6 +47,7 @@ public class NewListView extends AppCompatActivity {
         final String[] dateStrings = new String[intCount];
         final String[] photoNewStrings = new  String[intCount];
         final String[] detailStrings = new String[intCount];
+        final String[] videoStrings = new String[intCount];
 
 
 
@@ -57,6 +58,8 @@ public class NewListView extends AppCompatActivity {
             dateStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Day_News));
             photoNewStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Photo_News));
             detailStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Detail_News));
+            videoStrings[i] = cursor.getString(cursor.getColumnIndex(ManageTABLE.COLUMN_Video_News));
+
             titleShortStrings[i] = titleFullStrings[i].substring(0, intDigit)+"...";
             cursor.moveToNext();
         }//for
@@ -75,6 +78,9 @@ public class NewListView extends AppCompatActivity {
                 intent.putExtra("image", photoNewStrings[i]);
                 intent.putExtra("date", dateStrings[i]);
                 intent.putExtra("detail", detailStrings[i]);
+                intent.putExtra("video", videoStrings[i]);
+
+
                 startActivity(intent);
 
 

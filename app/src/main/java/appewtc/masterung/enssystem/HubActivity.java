@@ -25,6 +25,11 @@ public class HubActivity extends AppCompatActivity {
         bindWidget();
 
     }   // Main Method
+    public  void  clickNews(View view) {
+         Intent intent = new Intent(HubActivity.this, NewListView.class);
+    startActivity(intent);}
+
+
 
     @Override
     protected void onStart() {

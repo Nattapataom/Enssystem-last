@@ -44,7 +44,8 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".NewListView" />
         <activity android:name=".NewDetail" />
-        <activity android:name=".CallListView"></activity>
+        <activity android:name=".CallListView" />
+        <activity android:name=".CallPhone"></activity>
     </application>
 
 </manifest>

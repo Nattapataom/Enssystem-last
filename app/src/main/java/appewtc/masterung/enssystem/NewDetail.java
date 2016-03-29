@@ -89,7 +89,9 @@ public class NewDetail extends AppCompatActivity implements View.OnClickListener
                 break;
             case R.id.bttDetailVideo:
 
-                showVideoView();
+              //  showVideoView();
+                startActivity (new Intent(this, HubActivity.class));
+                finish();
 
                 break;
         } //switch

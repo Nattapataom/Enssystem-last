@@ -61,6 +61,25 @@
                     android:textColor="@color/text" />
             </ScrollView>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/video"
+                android:id="@+id/textView26"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/text"
+                android:textSize="@dimen/h2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Video"
+                android:id="@+id/textView27"
+                android:layout_marginLeft="25dp"
+                android:textSize="@dimen/h2"
+                android:clickable="true"
+                android:onClick="showVideoView" />
+
         </LinearLayout>
     </ScrollView>
 

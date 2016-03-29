@@ -39,6 +39,8 @@
     <string name="th_status">สถิติ</string>
     <string name="th_call">เบอร์ฉุกเฉิน</string>
     <string name="title_activity_maps">Map</string>
+    <string name="video">วีดิโอ ที่เกี่ยวข้อง</string>
+    <string name= "distric">อำเภอที่เกิดเหต</string>
 
 
 </resources>

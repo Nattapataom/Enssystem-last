@@ -16,7 +16,8 @@ import org.w3c.dom.Text;
 public class NewDetail extends AppCompatActivity implements View.OnClickListener {
 
     //Explicit
-    private TextView titleTextView, dateTextView, detailTextView;
+    private TextView titleTextView, dateTextView, detailTextView,
+    video1TextView, video2TextView;
     private ImageView newsImageView;
     private String titleString, dateString, detailString, urlNewsImageString, videoString;
     private Button backButton, videoButton;
@@ -37,7 +38,12 @@ public class NewDetail extends AppCompatActivity implements View.OnClickListener
 
 
 
-    } // mian method
+    } // Main method
+
+
+
+
+
 
     private void buttonController() {
         backButton.setOnClickListener(this);
@@ -55,6 +61,17 @@ public class NewDetail extends AppCompatActivity implements View.OnClickListener
         urlNewsImageString = getIntent().getStringExtra("Image");
         dateString = getIntent().getStringExtra("Date");
         detailString = getIntent().getStringExtra("Detail");
+        videoString = getIntent().getStringExtra("Video");
+        if (videoString.length() == 0) {
+            //No Video
+            video1TextView.setVisibility(View.INVISIBLE);
+            video2TextView.setVisibility(View.INVISIBLE);
+
+
+        }
+
+
+
 
         titleTextView.setText(titleString);
         dateTextView.setText(dateString);
@@ -76,7 +93,8 @@ public class NewDetail extends AppCompatActivity implements View.OnClickListener
         newsImageView = (ImageView) findViewById(R.id.imvDetail);
         backButton = (Button) findViewById(R.id.bttDetailBack);
         videoButton = (Button) findViewById(R.id.bttDetailVideo);
-
+        video1TextView = (TextView) findViewById(R.id.textView26);
+        video2TextView = (TextView) findViewById(R.id.textView27);
     }
 
 
@@ -97,23 +115,11 @@ public class NewDetail extends AppCompatActivity implements View.OnClickListener
         } //switch
     } //onclick
 
-    private void showVideoView() {
+    public void showVideoView(View view) {
 
-        videoString = getIntent().getStringExtra("Video");
-        if (videoString.length() != 0) {
-            //Have
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(videoString));
-            startActivity(intent);
-
-
-        } else {
-            //null
-
-            MyAlertDialog myAlertDialog = new MyAlertDialog();
-            myAlertDialog.MyDialog(NewDetail.this, R.drawable.icon_question,
-                    "ไม่สามรถแสดง วีดีโอ ได้", "ไม่สามรถแสดง เนื่องด้วยข่าวนี้ไม่มี วีดีโอ");
-        }
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(videoString));
+        startActivity(intent);
 
 
 

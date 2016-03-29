@@ -25,6 +25,10 @@ public class HubActivity extends AppCompatActivity {
         bindWidget();
 
     }   // Main Method
+    public  void clickStatic (View view) {
+        startActivity(new Intent(this, StaticActivity.class));
+    }
+
     public  void clickCall(View view){
         startActivity(new Intent(new Intent(HubActivity.this, CallListView.class)));
 

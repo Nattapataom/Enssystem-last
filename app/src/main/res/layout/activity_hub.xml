@@ -80,7 +80,8 @@ android:background="@drawable/wall">
             android:layout_height="match_parent"
             android:id="@+id/imageView7"
             android:src="@drawable/section4"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="clickStatic" />
     </LinearLayout>
 
     <LinearLayout

@@ -4,9 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
-/**
- * Created by masterUNG on 1/19/16 AD.
- */
+
 public class MyAlertDialog {
 
     public void MyDialog(Context context,

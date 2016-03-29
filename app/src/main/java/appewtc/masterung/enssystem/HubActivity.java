@@ -44,7 +44,7 @@ public class HubActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        engImageView.setVisibility(View.INVISIBLE);
+        //engImageView.setVisibility(View.INVISIBLE);
 
     }
 
@@ -65,7 +65,7 @@ public class HubActivity extends AppCompatActivity {
         staticTextView.setText(getResources().getString(R.string.th_status));
         callTextView.setText(getResources().getString(R.string.th_call));
 
-        changeThaiEng();
+       // changeThaiEng();
 
     }   // clickTHAI
 
@@ -90,7 +90,7 @@ public class HubActivity extends AppCompatActivity {
         staticTextView.setText(getResources().getString(R.string.en_status));
         callTextView.setText(getResources().getString(R.string.en_call));
 
-        changeThaiEng();
+       // changeThaiEng();
 
     }   // clickENG
 

@@ -1,5 +1,7 @@
 package appewtc.masterung.enssystem;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -31,10 +33,13 @@ public class CallPhone extends AppCompatActivity {
 
 
     }   // Main Method
+    public  void clickBackPhoneCall(View view){
+        finish();
+    }
 
     private void createListView() {
         String[] callStrings = getIntent().getStringArrayExtra("Call");
-        String[] phoneStrings = getIntent().getStringArrayExtra("Phone");
+        final String[] phoneStrings = getIntent().getStringArrayExtra("Phone");
 
         PhoneAdapter phoneAdapter = new PhoneAdapter(CallPhone.this, callStrings, phoneStrings);
         phoneListView.setAdapter(phoneAdapter);
@@ -43,7 +48,7 @@ public class CallPhone extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
 
-
+                myCallPhone(phoneStrings[i]);
 
             }//onItemClick
 
@@ -51,6 +56,14 @@ public class CallPhone extends AppCompatActivity {
         });
 
     }//createListView
+
+    private void myCallPhone(String phoneString) {
+
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + phoneString));
+        startActivity(intent);
+
+    }   // myCallPhone
 
     private void showChoose() {
         int intBackGround = getIntent().getIntExtra("Icon", R.drawable.catagory1);

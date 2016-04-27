@@ -22,5 +22,6 @@
         android:layout_height="wrap_content"
         android:text="New Button"
         android:id="@+id/button15"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:onClick="clickBackStaticDistrict" />
 </RelativeLayout>

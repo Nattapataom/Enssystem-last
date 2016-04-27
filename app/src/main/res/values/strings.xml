@@ -43,4 +43,14 @@
     <string name="distric">อำเภอที่เกิดเหต</string>
 
 
+    <string name="grap">กราฟแสดงสถิติ</string>
+
+    <string name="cat1">ไฟไหม้</string>
+    <string name="cat2">น้ำท่วม</string>
+    <string name="cat3">แผ่นดินไหว</string>
+    <string name="cat4">อุบัติเหตุ</string>
+
+    <string name="choose1">ประเภทอุบัติเหตุ</string>
+    <string name="choose2">แบ่งตามอำเภอ</string>
+
 </resources>

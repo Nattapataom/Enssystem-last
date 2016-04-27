@@ -26,7 +26,7 @@ public class HubActivity extends AppCompatActivity {
 
     }   // Main Method
     public  void clickStatic (View view) {
-        startActivity(new Intent(this, StaticActivity.class));
+        startActivity(new Intent(this, ChooseTypeGraph.class));
     }
 
     public  void clickCall(View view){
